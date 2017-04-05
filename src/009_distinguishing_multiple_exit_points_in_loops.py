@@ -1,10 +1,8 @@
 def find(seq, target):
-    found = False
     for i, value in enumerate(seq):
         if value == target:
-            found = True
             break
-    if not found:
+    else:
         return -1
     return i
 
