@@ -1,8 +1,9 @@
+from collections import defaultdict
+
 colors = ['red', 'green', 'red', 'blue', 'green', 'red']
 
-d = {}
+d = defaultdict(int)
 for color in colors:
-    d[color] = d.get(color, 0) + 1
     d[color] += 1
 
 print(d)
