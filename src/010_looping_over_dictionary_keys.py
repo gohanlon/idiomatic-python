@@ -23,3 +23,14 @@ d = {k: dict[k] for k in dict if not k.startswith('r')}
 
 print(d)
 print()
+
+
+# Note: This is my own addition -- it's not from the Raymond Hettinger talk
+# Delete some keys; best when dict is or may be very large (the safest approach)
+d = dict.copy()
+
+remove = [k for k in d if k.startswith('r')]
+for k in remove:
+    del d[k]
+
+print(d)
