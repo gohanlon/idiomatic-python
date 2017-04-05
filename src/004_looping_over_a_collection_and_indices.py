@@ -1,4 +1,4 @@
 colors = ['red', 'green', 'blue', 'yellow']
 
-for i in range(len(colors)):
-    print(i, '-->', colors[i])
+for i, color in enumerate(colors):
+    print(i, '-->', color)
