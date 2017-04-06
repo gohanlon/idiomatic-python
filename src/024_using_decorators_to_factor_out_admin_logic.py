@@ -1,13 +1,22 @@
+from functools import wraps
+
 import urllib.request
 
-def web_lookup(url, saved={}):
-    if url in saved:
-        return saved[url]
-    page = urllib.request.urlopen(url).read()
-    saved[url] = page
-    return page
+def cache(func):
+    saved = {}
+    @wraps(func)
+    def newfunc(*args):
+        if args in saved:
+            return saved[args]
+        result = func(*args)
+        saved[args] = result
+        return result
+    return newfunc
 
-cache = {}
-print(web_lookup('http://example.com'), cache)
+@cache
+def web_lookup(url):
+    return urllib.request.urlopen(url).read()
+
+print(web_lookup('http://example.com'))
 print('\n')
-print(web_lookup('http://example.com'), cache)
+print(web_lookup('http://example.com'))
