@@ -1,8 +1,10 @@
-names = ['raymond', 'rachel', 'matthew', 'roger', 'betty', 'melissa', 'judith', 'charlie']
+from collections import deque
+
+names = deque(['raymond', 'rachel', 'matthew', 'roger', 'betty', 'melissa', 'judith', 'charlie'])
 print(names)
 
 del names[0]
-names.pop(0)
-names.insert(0, 'mark')
+names.popleft()
+names.appendleft('mark')
 
 print(names)
