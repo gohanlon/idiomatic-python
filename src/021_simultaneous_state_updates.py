@@ -13,13 +13,9 @@ t = 1
 
 print('Before:', x, y, dx, dy)
 
-tmp_x = x + dx * t
-tmp_y = y + dy * t
-tmp_dx = influence(x, y, dx, dy, partial='x')
-tmp_dy = influence(x, y, dx, dy, partial='y')
-x = tmp_x
-y = tmp_y
-dx = tmp_dx
-dy = tmp_dy
+x, y, dx, dy = (x + dx * t,
+        y + dy * t,
+        influence(x, y, dx, dy, partial='x'),
+        influence(x, y, dx, dy, partial='y'))
 
 print('After:', x, y, dx, dy)
