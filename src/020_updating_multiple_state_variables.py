@@ -1,10 +1,8 @@
 def fibonacci(n):
-    x = 0
-    y = 1
+    x, y = 0, 1
     for i in range(n):
         print(x)
         t = y
-        y = x + y
-        x = t
+        x, y = y, x+y
 
 fibonacci(10)
