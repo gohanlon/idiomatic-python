@@ -1,7 +1,4 @@
-f = open('data/lorem_ipsum.txt')
-try:
+with open('data/lorem_ipsum.txt') as f:
     data = f.read()
-finally:
-    f.close()
 
 print(data)
