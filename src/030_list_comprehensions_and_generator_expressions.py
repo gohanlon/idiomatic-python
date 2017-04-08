@@ -1,7 +1,5 @@
-result = []
+# Comprehension: a list is created in memory
+print(sum([i**2 for i in range(10)]))
 
-for i in range(10):
-    s = i ** 2
-    result.append(s)
-
-print(sum(result))
+# Geneartor: only iterables are created; no list is created in memory
+print(sum(i**2 for i in range(10)))
